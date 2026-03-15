@@ -1,14 +1,68 @@
-<div style="text-align: center;">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutup Fablları - Oyun</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+        #game-wrapper {
+            width: 485px;
+            height: 402px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        .start-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .start-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
     <h3>Kutup Fablları - Penguen Yakalama Oyunu</h3>
-    <iframe 
-        src="https://scratch.mit.edu/projects/1291268123/embed" 
-        allowtransparency="true" 
-        width="485" 
-        height="402" 
-        frameborder="0" 
-        scrolling="no" 
-        allow="camera" 
-        allowfullscreen>
-    </iframe>
+    
+    <div id="game-wrapper">
+        <button class="start-btn" onclick="oyunuBaslat()">Kamerayı Etkinleştir ve Oyunu Başlat</button>
+    </div>
+
     <p><i>Not: Oyunun çalışması için tarayıcıdan kamera izni vermeniz gerekmektedir.</i></p>
 </div>
+
+<script>
+    function oyunuBaslat() {
+        // Kamera izni isteyen görseldeki paneli tetiklemek için iframe'i buraya yerleştiriyoruz
+        const wrapper = document.getElementById('game-wrapper');
+        wrapper.innerHTML = `
+            <iframe 
+                src="https://scratch.mit.edu/projects/1291268123/embed" 
+                allowtransparency="true" 
+                width="485" 
+                height="402" 
+                frameborder="0" 
+                scrolling="no" 
+                allow="camera" 
+                allowfullscreen>
+            </iframe>`;
+    }
+</script>
+
+</body>
+</html>
